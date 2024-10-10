@@ -1,2 +1,21 @@
-package com.example.testing.model;public class Stock {
+package com.example.testing.model;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+
+@Entity
+@Table(name = "stock_t")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Stock {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private Integer amount;
 }
